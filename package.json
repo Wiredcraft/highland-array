@@ -1,0 +1,38 @@
+{
+  "name": "highland-array",
+  "version": "0.0.1",
+  "description": "(Node.js) Extend the native Array with the methods that work with Highland (a JS stream lib).",
+  "author": {
+    "name": "devo.ps",
+    "email": "info@devo.ps",
+    "url": "https://github.com/devo-ps"
+  },
+  "contributors": [],
+  "keywords": [
+    "array",
+    "highland",
+    "stream"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devo-ps/highland-array.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devo-ps/highland-array/issues"
+  },
+  "homepage": "https://github.com/devo-ps/highland-array",
+  "dependencies": {
+    "es5-ext": "~0.9.2",
+    "highland": "1.x"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-coffee": "latest",
+    "gulp-mocha": "latest",
+    "gulp-util": "latest",
+    "mocha": "latest",
+    "should": "~2.1.1"
+  },
+  "scripts": {}
+}
