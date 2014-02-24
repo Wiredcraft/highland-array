@@ -121,7 +121,7 @@ describe('Highland Array:', function() {
 
         it('should throw an error', function() {
             (function() {
-                lorem.shiftToStream('a string')
+                lorem.shiftToStream('not a function');
             }).should.throwError();
         });
     });
