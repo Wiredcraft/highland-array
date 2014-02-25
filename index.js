@@ -1,12 +1,10 @@
-var validFunction, _;
+var _;
 
 _ = require('highland');
 
-validFunction = require('es5-ext/lib/Function/valid-function');
-
 Array.prototype.shiftToStream = function(cb) {
-  if (cb) {
-    validFunction(cb);
+  if ((cb != null) && typeof cb !== 'function') {
+    throw new TypeError(cb + ' is not a function');
   }
   return _((function(_this) {
     return function(push, next) {

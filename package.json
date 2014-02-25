@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/devo-ps/highland-array",
   "dependencies": {
-    "es5-ext": "~0.9.2",
     "highland": "1.x"
   },
   "devDependencies": {
