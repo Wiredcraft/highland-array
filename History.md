@@ -1,4 +1,11 @@
 
+0.1.0 / 2014-02-25
+==================
+
+ * Removed es5-ext from dependencies.
+ * Updated readme.
+ * Added jshint.
+
 0.0.1 / 2014-02-24
 ==================
 
