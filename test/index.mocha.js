@@ -65,6 +65,36 @@ describe('Highland Array:', function() {
         });
     });
 
+    describe('The shiftToStream() method in a different context', function() {
+
+        var ctx = {};
+
+        before(function() {
+            lorem = ['lorem', 'ipsum', 'dolor'];
+            ctx.stream = lorem.shiftToStream();
+        });
+
+        it('can shift a value', function(done) {
+            lorem.should.have.lengthOf(3);
+            ctx.stream.pull(function(err, item) {
+                item.should.equal('lorem');
+                lorem.should.have.lengthOf(2);
+                done();
+            });
+        });
+
+        it('can shift all values', function(done) {
+            lorem.should.have.lengthOf(2);
+            ctx.stream.toArray(function(res) {
+                res.should.eql(['ipsum', 'dolor']);
+                lorem.should.have.lengthOf(0);
+                done();
+            });
+        });
+
+        it('seems not so useful since it does not allow more than one consumer');
+    });
+
     describe('The shiftToStream() method with a callback:', function() {
 
         before(function() {
