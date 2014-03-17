@@ -4,11 +4,11 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var coffee = require('gulp-coffee');
 var coffeelint = require('gulp-coffeelint');
-var mocha = require('gulp-mocha');
 var jshint = require('gulp-jshint');
+var mocha = require('gulp-mocha');
 
 // Files.
-var src = 'src/*.coffee';
+var src = 'src/**/*.coffee';
 var tests = 'test/*.mocha.js';
 
 // Compile coffee scripts.
@@ -33,7 +33,7 @@ gulp.task('coffee', function() {
 gulp.task('jshint', function() {
     return gulp.src(tests)
         .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(jshint.reporter('jshint-stylish'));
 });
 
 // Run tests.
@@ -44,4 +44,4 @@ gulp.task('mocha', ['coffee', 'jshint'], function() {
         }));
 });
 
-gulp.task('default', ['coffee', 'mocha', 'jshint']);
+gulp.task('default', ['coffee', 'jshint', 'mocha']);

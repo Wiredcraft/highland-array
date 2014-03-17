@@ -6,6 +6,8 @@ __Caution__: this will pollute your native JS `Array`.
 
 This is a Node.js module. This module extends the native JS `Array` with the methods that work with Highland.
 
+This can be also used in the browsers, but not tested.
+
 ## The methods
 
 ### shiftToStream()
