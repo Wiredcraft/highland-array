@@ -1,4 +1,10 @@
 
+0.3.0 / 2014-12-02
+==================
+
+  * Added and use gulp-coverage.
+  * Moved repo from devo-ps to Wiredcraft.
+
 0.2.0 / 2014-06-06
 ==================
 
