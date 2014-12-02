@@ -1,3 +1,5 @@
+var debug = require('debug')('carcass:test');
+
 require('../');
 var _ = require('highland');
 var lorem = null;
@@ -21,6 +23,7 @@ describe('Highland Array:', function() {
         it('should have the additional methods', function() {
             lorem.should.have.property('shiftToStream').with.type('function');
         });
+
     });
 
     describe('The shiftToStream() method:', function() {
@@ -63,6 +66,7 @@ describe('Highland Array:', function() {
                 done();
             });
         });
+
     });
 
     describe('The shiftToStream() method in a different context', function() {
@@ -93,6 +97,7 @@ describe('Highland Array:', function() {
         });
 
         it('seems not so useful since it does not allow more than one consumer');
+
     });
 
     describe('The shiftToStream() method with a callback:', function() {
@@ -141,6 +146,7 @@ describe('Highland Array:', function() {
                 done();
             });
         });
+
     });
 
     describe('The shiftToStream() method with a bad callback:', function() {
@@ -154,5 +160,38 @@ describe('Highland Array:', function() {
                 lorem.shiftToStream('not a function');
             }).should.throwError();
         });
+
     });
+
+    describe('Example for readme:', function() {
+
+        it('should work', function(done) {
+            var theArray = [1, 2, 3, 4];
+            theArray.shiftToStream().once('end', function() {
+                // the array will be empty in the end
+                theArray.should.eql([]);
+                done();
+            }).each(function(x) {
+                // will be called 4 times with x being 1, 2, 3 and 4
+                debug(x);
+            });
+        });
+
+        it('should work', function(done) {
+            // optionally give it a callback
+            var theArray = [1, 2, 3, 4];
+            theArray.shiftToStream(function(x) {
+                return x * 2;
+            }).once('end', function() {
+                // the array will be empty in the end
+                theArray.should.eql([]);
+                done();
+            }).each(function(x) {
+                // will be called 4 times with x being 2, 4, 6 and 8
+                debug(x);
+            });
+        });
+
+    });
+
 });

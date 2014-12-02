@@ -14,11 +14,26 @@ This can be also used in the browsers, but not tested.
 
 It returns a Highland stream which once consumed, will shift items from the array. Example:
 
-```js
+```javascript
+require('highland-array');
+// or `require('carcass')` if you have carcass installed.
+
 var theArray = [1, 2, 3, 4];
 theArray.shiftToStream().once('end', function() {
-    // theArray will be empty in the end
+    // the array will be empty in the end
+    // theArray.should.eql([]);
 }).each(function(x) {
     // will be called 4 times with x being 1, 2, 3 and 4
+});
+
+// optionally give it a callback
+var theArray = [1, 2, 3, 4];
+theArray.shiftToStream(function(x) {
+    return x * 2;
+}).once('end', function() {
+    // the array will be empty in the end
+    // theArray.should.eql([]);
+}).each(function(x) {
+    // will be called 4 times with x being 2, 4, 6 and 8
 });
 ```

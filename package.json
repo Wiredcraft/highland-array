@@ -3,11 +3,13 @@
   "version": "0.2.0",
   "description": "(Node.js) Extend the native Array with the methods that work with Highland (a JS stream lib).",
   "author": {
-    "name": "devo.ps",
-    "email": "info@devo.ps",
-    "url": "https://github.com/devo-ps"
+    "name": "Wiredcraft",
+    "email": "info@wiredcraft.com",
+    "url": "http://wiredcraft.com"
   },
-  "contributors": [],
+  "contributors": [
+    "Makara Wang"
+  ],
   "keywords": [
     "array",
     "highland",
@@ -16,16 +18,17 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devo-ps/highland-array.git"
+    "url": "https://github.com/Wiredcraft/highland-array.git"
   },
   "bugs": {
-    "url": "https://github.com/devo-ps/highland-array/issues"
+    "url": "https://github.com/Wiredcraft/highland-array/issues"
   },
-  "homepage": "https://github.com/devo-ps/highland-array",
+  "homepage": "https://github.com/Wiredcraft/highland-array",
   "dependencies": {
-    "highland": "1.x"
+    "highland": "*"
   },
   "devDependencies": {
+    "debug": "latest",
     "gulp": "latest",
     "gulp-coffee": "latest",
     "gulp-coffeelint": "latest",
